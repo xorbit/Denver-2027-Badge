@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Embedded ARM",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Libraries/CMSIS/Core/Include",
+                "${workspaceFolder}/Libraries/CMSIS/Device/PY32F0xx/Include",
+                "${workspaceFolder}/Libraries/PY32F002B_LL_Driver/Inc",
+                "${workspaceFolder}/Libraries/PY32F002B_LL_BSP/Inc",
+            ],
+            "defines": [
+                "PY32F002Bx5"
+            ],
+            "intelliSenseMode": "gcc-arm",
+            "compilerPath": "/opt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

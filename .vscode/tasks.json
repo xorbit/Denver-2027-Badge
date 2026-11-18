@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+
+    "version": "2.0.0",
+    "options": 
+    {
+        "env": 
+        {
+            "ARMGCC_DIR": "/opt/gcc-arm-none-eabi/bin"
+        }
+    },
+    "tasks": 
+    [
+        {
+            "label": "Build PY32F002B app",
+            "type": "shell",
+            "command": [
+                "make"
+            ],
+            "problemMatcher": [
+            ]
+        },
+        {
+            "label": "Flash PY32F002B app",
+            "type": "shell",
+            "command": [
+                "make flash"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build & Flash PY32F002B app",
+            "dependsOn": [
+                "Build PY32F002B app",
+                "Flash PY32F002B app"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

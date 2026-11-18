@@ -1,0 +1,40 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "armToolchainPath": "/opt/gcc-arm-none-eabi/bin/",
+            "gdbPath": "/usr/bin/arm-none-eabi-gdb",
+            "toolchainPrefix": "arm-none-eabi",
+            "name": "Cortex Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Build/app.elf",
+            "request": "attach",
+            "runToEntryPoint": "main",
+            "servertype": "jlink",
+            "device": "PY32F002BX5",
+            "interface": "swd",
+            "preLaunchTask": "Build & Flash PY32F002B app",
+            "svdFile": "${workspaceFolder}/Misc/SVD/py32f002xx.svd",
+            "showDevDebugOutput": "vscode",
+            "swoConfig":
+            {
+                "enabled": true,
+                "cpuFrequency": 8000000,
+                "swoFrequency":  4000000,
+                "source": "probe",
+                "decoders":
+                [
+                    {
+                        "label": "ITM port 0 output",
+                        "type": "console",
+                        "port": 0,
+                        "showOnStartup": true,
+                        "encoding": "ascii"
+                    }
+                ]
+            }
+        }
+    ]
+}
